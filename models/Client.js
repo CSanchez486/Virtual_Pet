@@ -2,15 +2,23 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Client extends Model {}
+class User extends Model {}
 
-Client.init(
+User.init(
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+        },
+        username: {
+            type: DataTypes.STRING(30),
+            allowNull: false,
+        },
+        password: {
+            type: DataTypes.STRING(100),
+            allowNull: false,
         },
         first_name: {
             type: DataTypes.STRING(30),
@@ -28,14 +36,6 @@ Client.init(
                 isEmail: true,
             },
         },
-        username: {
-            type: DataTypes.STRING(30),
-            allowNull: false,
-        },
-        password: {
-            type: DataTypes.STRING(100),
-            allowNull: false,
-        },
         phone_number: {
             type: DataTypes.INTEGER(30),
             allowNull: false,
@@ -46,8 +46,8 @@ Client.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'client',
+        modelName: 'user',
     }
 );
 
-module.exports = Client;
+module.exports = User;

@@ -12,7 +12,11 @@ Pet.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        first_name: {
+            type: DataTypes.STRING(100),
+            allowNull: false,
+        },
+        last_name: {
             type: DataTypes.STRING(100),
             allowNull: false,
         },

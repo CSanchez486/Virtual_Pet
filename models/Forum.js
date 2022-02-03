@@ -16,17 +16,17 @@ Forum.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        reply: {
+        response: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        client_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'client',
-                key: 'id',
-            },
-        },
+        // client_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'client',
+        //         key: 'id',
+        //     },
+        // },
     },
     {
         sequelize,
