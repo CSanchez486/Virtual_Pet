@@ -4,14 +4,34 @@ const { User } = require('../../models');
 const { Vet } = require('../../models');
 
 // log-in route: Redirects page from login to main after log-in is completed for vet portal
-router.get('/login/vet', withAuth, (req, res) => {
+router.get('/login/vet', withAuth, async (req, res) => {
+    try { 
+        const vetData = await Vet.findAll({
+            attributes: { exclude: ['password']}, 
+        });
+
+        const vet = vetData.map((project) => project.get({plain: true}));
+
+        
+    
+           
+
+// log-in route: Redirects page from login to main after log-in is completed for user portal
+router.get('/login/user', withAuth,  (req, res) => {
     if (req.session.logged_in) {
         res. redirect('/');
         return;
     }
 })
 
-// log-in route: Redirects page from login to main after log-in is completed for user portal
+// if logged the request to the homepage
+router.get('/login/vet', (req, res) => {
+    if (req.session.logged_in) {
+        res. redirect('/');
+        return;
+    }
+})
+
 router.get('/login/user', withAuth,  (req, res) => {
     if (req.session.logged_in) {
         res. redirect('/');
