@@ -1,6 +1,6 @@
-const {Vet} = require('../models')
+const { Veterinarian } = require('../models')
 
-const vetdata = [
+const vetData = [
     {
         dea: 'AS8524616',
         first_name: 'John',
@@ -11,4 +11,7 @@ const vetdata = [
         first_name: 'Jane',
         last_name: 'Doe'
     }
-]
+];
+
+const seedVeterinarian = () => Veterinarian.bulkCreate(vetData);
+module.exports = seedVeterinarian;

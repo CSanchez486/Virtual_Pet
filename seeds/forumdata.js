@@ -1,6 +1,6 @@
-const {Forum} = require('../models')
+const { Forum } = require('../models');
 
-const forumdata = [
+const forumData = [
     {
         post: "My cat fell from a tree",
         response: "your cat is fine"
@@ -8,4 +8,7 @@ const forumdata = [
     {
         post: "My dog ate my homework"
     }
-]
+];
+
+const seedForum = () => Forum.bulkCreate(forumData);
+module.exports = seedForum;
