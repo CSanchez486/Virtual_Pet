@@ -13,8 +13,12 @@ Forum.init(
             autoIncrement: true,
         },
         post: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.TEXT,
             allowNull: false,
+        },
+        reply: {
+            type: DataTypes.TEXT,
+            allowNull: true,
         },
         client_id: {
             type: DataTypes.INTEGER,

@@ -12,12 +12,12 @@ Pet.belongsToMany(Client, {
     foreignKey: 'client_id',
 });
 
-Forum.hasMany(Reply, {
-    foreignKey: 'forum_id',
+Client.hasMany(Forum, {
+    foreignKey: 'client_id',
 });
 
-Reply.belongsToMany(Forum, {
-    foreignKey: 'forum_id',
+Forum.belongsToMany(Client, {
+    foreignKey: 'client_id',
 });
 
 module.exports = {
