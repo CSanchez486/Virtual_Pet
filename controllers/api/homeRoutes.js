@@ -1,10 +1,10 @@
-`const router = require('express').Router();`
+const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const { User } = require('../../models');
 const { Vet } = require('../../models');
 
 // log-in route: Redirects page from login to main after log-in is completed for vet portal
-router.get('/login/vet', (req, res) => {
+router.get('/login/vet', withAuth, (req, res) => {
     if (req.session.logged_in) {
         res. redirect('/');
         return;
@@ -12,7 +12,7 @@ router.get('/login/vet', (req, res) => {
 })
 
 // log-in route: Redirects page from login to main after log-in is completed for user portal
-router.get('/login/user', (req, res) => {
+router.get('/login/user', withAuth,  (req, res) => {
     if (req.session.logged_in) {
         res. redirect('/');
         return;
