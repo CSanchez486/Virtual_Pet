@@ -1,25 +1,25 @@
-const Client = require('./Client');
+const User = require('./User');
 const Pet = require('./Pet');
 const Veterinarian = require('./Veterinarian');
 const Forum = require('./Forum');
 const Reply = require('./Reply');
 
-Client.hasMany(Pet, {
+User.hasMany(Pet, {
     foreignKey: 'client_id',
 });
 
-Pet.belongsToMany(Client, {
+Pet.belongsToMany(User, {
     foreignKey: 'client_id',
 });
 
-Client.hasMany(Forum, {
+User.hasMany(Forum, {
     foreignKey: 'client_id',
 });
 
-Forum.belongsToMany(Client, {
+Forum.belongsToMany(User, {
     foreignKey: 'client_id',
 });
 
 module.exports = {
-    Client, Pet, Veterinarian, Forum, Reply,
+    User, Pet, Veterinarian, Forum, Reply,
 };
