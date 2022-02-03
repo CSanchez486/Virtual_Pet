@@ -1,6 +1,6 @@
 const {Pet} = require('../models')
 
-const petdata = [
+const petData = [
     {
         client_id: 1,
         first_name: "Tigger",
@@ -29,4 +29,7 @@ const petdata = [
         species: "Cat",
         age: 5
     }
-]
+];
+
+const seedPet = () => Pet.bulkCreate(petData);
+module.exports = seedPet;

@@ -1,17 +1,17 @@
 const sequelize = require('../config/connection');
-const seedforum = require('./forumdata')
-const seedpet = require('./petdata')
-const seeduser = require('./userdata')
-const seedvet = require('./vetdata')
+const seedForum = require('./forumdata')
+const seedPet = require('./petdata')
+const seedUser = require('./userdata')
+const seedVeterinarian = require('./vetdata')
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
-    await seedforum()
-    await seedpet()
-    await seeduser()
-    await seedvet()
+    await seedForum();
+    await seedPet();
+    await seedUser();
+    await seedVeterinarian();
 
     process.exit(0)
-}
+};
 
 seedAll();
