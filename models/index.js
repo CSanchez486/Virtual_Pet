@@ -5,20 +5,21 @@ const Forum = require('./Forum');
 const Reply = require('./Reply');
 
 User.hasMany(Pet, {
-    foreignKey: 'client_id',
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
-Pet.belongsToMany(User, {
-    foreignKey: 'client_id',
+Pet.belongsTo(User, {
+    foreignKey: 'user_id',
 });
 
-User.hasMany(Forum, {
-    foreignKey: 'client_id',
-});
+// User.hasMany(Forum, {
+//     foreignKey: 'client_id',
+// });
 
-Forum.belongsToMany(User, {
-    foreignKey: 'client_id',
-});
+// Forum.belongsTo(User, {
+//     foreignKey: 'client_id',
+// });
 
 module.exports = {
     User, Pet, Veterinarian, Forum, Reply,

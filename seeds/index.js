@@ -6,11 +6,16 @@ const seedVeterinarian = require('./vetdata')
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
-    await seedForum();
-    await seedPet();
+    console.log('\n----- DATABASE SYNCED -----\n');
     await seedUser();
+    console.log('\n----- USER SYNCED -----\n');
+    await seedPet();
+    console.log('\n----- PET SYNCED -----\n');
     await seedVeterinarian();
-
+    console.log('\n----- VETERINARIAN SYNCED -----\n');
+    await seedForum();
+    console.log('\n----- FORUM SYNCED -----\n');
+    
     process.exit(0)
 };
 
