@@ -14,5 +14,3 @@ router.use('/vet', vetRoutes);
 
 module.exports = router;
 
-
-//fixing conflicts

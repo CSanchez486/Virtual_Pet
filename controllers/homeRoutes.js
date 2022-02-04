@@ -20,11 +20,17 @@ router.get("/login/vet", async (req, res) => {
             users,
             logged_in: req.session.logged_in,
         });
+        const vet = vetData.map((project) => project.get({plain: true}));
+
+        res.render('main', {
+            users,
+            logged_in: req.session.logged_in,
+        });
     } catch (err) {
         res.status(500).json(err);
     }
 });
-
+       
     // log-in route: Redirects page from login to main after log-in is completed for user portal
 router.get('/login/vet', withAuth,  (req, res) => {
     if (req.session.logged_in) {
@@ -61,8 +67,9 @@ router.get('/login/user', withAuth, (req, res) => {
         res. redirect('/');
         return;
     }
+    res.render('login/user');
 })
 
-res.render('login/user');
+
 
 module.exports = router;
