@@ -5,7 +5,7 @@ const postHandler = async (event) => {
     const post = document.querySelector('').value.trim();
     const picture = document.querySelector('').value;
 
-    if (animal && post && picture) {
+    if (post) {
         const response = await fetch('', {
             method: 'POST',
             body: JSON.stringify({ animal, post, picture }),
