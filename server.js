@@ -42,11 +42,3 @@ app.use(require('./controllers/mainRoute.js'));
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 })
-
-
-
-// app.get('/', function(req, res){
-//   res.type('text/plain');
-//   res.render('main')
-// })
-// var handlebars = require('express-handlebars').create({defaultLayout: 'main'});

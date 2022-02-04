@@ -37,7 +37,7 @@ User.init(
             },
         },
         phone_number: {
-            type: DataTypes.INTEGER(30),
+            type: DataTypes.STRING(30),
             allowNull: false,
         },
     },
