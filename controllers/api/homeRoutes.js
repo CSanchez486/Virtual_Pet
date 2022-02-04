@@ -43,6 +43,6 @@ router.get('/login/user', withAuth,  (req, res) => {
     }
 })
 
-res.render('login');
+// res.render('login');
 
 module.exports = router;
