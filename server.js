@@ -37,7 +37,8 @@ app.use(routes);
 //HANDLEBARS
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.use(require('./controllers/mainRoute.js'));
+app.use(require('./controllers/hbsRoutes'));
+
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
