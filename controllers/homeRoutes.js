@@ -11,7 +11,7 @@ router.get("/login/vet", async (req, res) => {
                 {
                 model: Veterinarian,
                 attributes: ['name'],  exclude: ["password"],
-        }],
+                 }],
         });
         
         const vet = vetData.map((project) => project.get({plain: true}));
@@ -36,12 +36,13 @@ router.get('/login/vet', withAuth,  (req, res) => {
 })
         
 
-
-
 router.get("/login/user", withAuth, async (req, res) => {
     try{
         const userData = await User.findAll({
-            attributes: {exclude: ["password"]},
+            include: [
+            { model: User,
+            attributes: { exclude: ['password']},
+            }],
         });
         const user = userData.map((project) => project.get({plain: text}));
         res.render("main", {
