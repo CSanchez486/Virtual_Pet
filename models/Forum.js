@@ -23,7 +23,7 @@ Forum.init(
         // client_id: {
         //     type: DataTypes.INTEGER,
         //     references: {
-        //         model: 'client',
+        //         model: 'user',
         //         key: 'id',
         //     },
         // },

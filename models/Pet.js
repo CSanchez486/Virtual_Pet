@@ -32,12 +32,12 @@ Pet.init(
             type: DataTypes.INTEGER,
             allowNull: true,
         },
-        client_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
-            },
+              },
         },
     },
     {
