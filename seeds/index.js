@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
 const seedForum = require('./forumdata')
-const seedPet = require('./petdata')
 const seedUser = require('./userdata')
+const seedPet = require('./petdata')
 const seedVeterinarian = require('./vetdata')
 
 const seedAll = async () => {
