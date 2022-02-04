@@ -9,7 +9,9 @@ router.get("/login/vet", withAuth, async (req, res) => {
         const vetData = await Vet.findAll({
             attributes: { exclude: ["password"]},
         });
+        
         const vet = vetData.map((project) => project.get({plain: true}));
+
         res.render("main", {
             users,
             logged_in: req.session.logged_in,
@@ -18,39 +20,41 @@ router.get("/login/vet", withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-        const vet = vetData.map((project) => project.get({plain: true}));
 
-        res.render('main', {
+    // log-in route: Redirects page from login to main after log-in is completed for user portal
+router.get('/login/vet', withAuth,  (req, res) => {
+    if (req.session.logged_in) {
+        res. redirect('/');
+        return;
+    }
+})
+        
+
+
+
+router.get("/login/user", withAuth, async (req, res) => {
+    try{
+        const userData = await User.findAll({
+            attributes: {exclude: ["password"]},
+        });
+        const user = userData.map((project) => project.get({plain: text}));
+        res.render("main", {
             users,
             logged_in: req.session.logged_in,
-        });
-
+        });    
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
            
 
-// log-in route: Redirects page from login to main after log-in is completed for user portal
-router.get('/login/user', withAuth,  (req, res) => {
-    if (req.session.logged_in) {
-        res. redirect('/');
-        return;
-    }
-})
-
-router.get('/login/user', withAuth,  (req, res) => {
-    if (req.session.logged_in) {
-        res. redirect('/');
-        return;
-    }
-})
-
 // if logged the request to the homepage
-router.get('/login/vet', (req, res) => {
+router.get('/login/user', withAuth, (req, res) => {
     if (req.session.logged_in) {
         res. redirect('/');
         return;
     }
 })
-
-
 
 res.render('login');
 
