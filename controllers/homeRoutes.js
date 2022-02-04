@@ -5,10 +5,11 @@ const { Vet } = require('../../models');
 
 // log-in route: Redirects page from login to main after log-in is completed for vet portal
 router.get('/login/vet', withAuth, async (req, res) => {
-    try { 
-        const vetData = await Vet.findAll({
-            attributes: { exclude: ['password']}, 
-        });
+    try { const vetData = await Vet.findAll ({
+        attributes: { exclude: ['password']},
+        order: [['name'],]
+        }),
+        )},
 
         const vet = vetData.map((project) => project.get({plain: true}));
 
