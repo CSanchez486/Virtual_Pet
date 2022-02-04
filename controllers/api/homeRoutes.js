@@ -9,7 +9,6 @@ router.get('/login/vet', withAuth, async (req, res) => {
         const vetData = await Vet.findAll({
             attributes: { exclude: ['password']}, 
         });
-
         const vet = vetData.map((project) => project.get({plain: true}));
 
         res.render('main', {
