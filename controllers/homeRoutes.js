@@ -1,13 +1,17 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { User } = require('../models');
-const { Vet } = require('../models');
+const { Veterinarian } = require('../models');
 
 // log-in route: Redirects page from login to main after log-in is completed for vet portal
-router.get("/login/vet", withAuth, async (req, res) => {
+router.get("/login/vet", async (req, res) => {
     try {
         const vetData = await Vet.findAll({
-            attributes: { exclude: ["password"]},
+            include: [
+                {
+                model: Veterinarian,
+                attributes: ['name'],  exclude: ["password"],
+        }],
         });
         
         const vet = vetData.map((project) => project.get({plain: true}));
@@ -27,6 +31,8 @@ router.get('/login/vet', withAuth,  (req, res) => {
         res. redirect('/');
         return;
     }
+
+    res.render('login/vet');
 })
         
 
@@ -56,6 +62,6 @@ router.get('/login/user', withAuth, (req, res) => {
     }
 })
 
-res.render('login');
+res.render('login/user');
 
 module.exports = router;
