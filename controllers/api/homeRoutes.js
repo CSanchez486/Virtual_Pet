@@ -9,7 +9,11 @@ router.get('/login/vet', withAuth, async (req, res) => {
         const vetData = await Vet.findAll({
             attributes: { exclude: ['password']}, 
         });
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> cc5a124d72a5e2011bd32f215e1bfb5c78fcc942
         const vet = vetData.map((project) => project.get({plain: true}));
 
         res.render('main', {
@@ -17,7 +21,10 @@ router.get('/login/vet', withAuth, async (req, res) => {
             logged_in: req.session.logged_in,
         });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc5a124d72a5e2011bd32f215e1bfb5c78fcc942
            
 
 // log-in route: Redirects page from login to main after log-in is completed for user portal
