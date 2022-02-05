@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
+const {Forum} = require('../models')
 
-router.get('/', function (req, res) {
-  res.render('consult');
+router.get('/', async (req, res) => {
+  const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
+  res.render('featured', {question: featurepost.post,
+response: featurepost.response})
 })
 // router.get('/signupUser', function (req, res) {
 //   res.render('signupUser');

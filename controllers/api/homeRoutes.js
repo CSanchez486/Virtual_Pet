@@ -39,7 +39,9 @@ router.get('/login/user', withAuth, (req, res) => {
     res.render('login/user');
 })
 
-
+// router.get('/', (req, res) => {
+//     res.render('main')
+// })
 
 
 
