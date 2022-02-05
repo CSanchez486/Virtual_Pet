@@ -63,6 +63,6 @@ router.get('/login/user', withAuth, (req, res) => {
     }
 })
 
-res.render('login/user');
+// res.render('login/user');
 
 module.exports = router;
