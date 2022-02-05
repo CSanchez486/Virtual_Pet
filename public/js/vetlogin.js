@@ -6,7 +6,7 @@ const loginHandler = async (event) => {
     const dea = document.querySelector('').value.trim();
 
     if (username && password && dea) {
-        const response = await fetch('', {
+        const response = await fetch('/api/vet/login', {
             method: 'POST',
             body: JSON.stringify({ username, password, dea }),
             headers: { 'Content-Type': 'application/json' },
@@ -31,7 +31,7 @@ const signupHandler = async (event) => {
     const dea = document.querySelector('').value.trim();
 
     if (username && password && firstname && lastname && email && dea) {
-        const response = await fetch('/', {
+        const response = await fetch('/api/vet', {
             method: 'POST',
             body: JSON.stringify({ username, password, firstname, lastname, email, dea }),
             headers: { 'Content-Type': 'application/json' },
