@@ -6,7 +6,7 @@ const postHandler = async (event) => {
     const picture = document.querySelector('').value;
 
     if (post) {
-        const response = await fetch('', {
+        const response = await fetch('/api/post', {
             method: 'POST',
             body: JSON.stringify({ animal, post, picture }),
             headers: { 'Content-Type': 'application/json' },
