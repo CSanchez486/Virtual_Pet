@@ -37,8 +37,7 @@ router.post('/login', async (req, res) => {
               .status(400)
               .json({ message: 'Incorrect username' });
             return;
-          };
-          // const validPassword = await dbUserData.checkPassword(req.body.password); when using bcrypt
+          }
           const validPassword = await dbUserData.password == req.body.password;
           if (!validPassword) {
             res
