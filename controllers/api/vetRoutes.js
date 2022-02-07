@@ -49,31 +49,3 @@ router.post('/login', async (req, res) => {
 })
 
 module.exports = router;
-
-// Check a vetenarian's loggin information
-router.post('/login', async (req, res) => {
-    try {
-        const dbVetdata = await Veterinarian.findOne({
-          where: {
-            dea: req.body.dea,
-          },
-        });
-        if (!dbVetdata) {
-            res
-              .status(400)
-              .json({ message: 'Incorrect dea number' });
-            return;
-          }
-          req.session.save(() => {
-            req.session.loggedIn = true;
-      
-            res
-              .status(200)
-              .json({ user: dbUserData, message: 'You are now logged in!' });
-          });
-    }
-    catch(err){
-        console.log(err);
-        res.status(500).json(err);
-    }
-})
