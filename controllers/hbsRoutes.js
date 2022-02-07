@@ -11,6 +11,27 @@ const {Forum} = require('../models')
 //   res.render('signupUser');
 // })
 
+router.get('/forum', async (req, res) => {
+  const forumdata = await Forum.findAll();
+  const forums = forumdata.map((forum) =>
+      forum.get({ plain: true })
+    );
+  res.render('forums',{forums})
+})
+
+router.get('/post', async (req, res) => {
+  const forumdata = await Forum.findAll();
+  const forums = forumdata.map((forum) =>
+      forum.get({ plain: true })
+    );
+  res.render('userquestion')
+})
+
+router.get('/forum/:id', async (req, res) => {
+  const postdata = await Forum.findByPk(req.params.id)
+  res.render('response', {question: postdata.post})
+})
+
 // router.get('/signupvet', function (req, res) {
 //   res.render('signupVet');
 // })
