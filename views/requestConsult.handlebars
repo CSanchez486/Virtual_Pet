@@ -1,7 +1,16 @@
-{{!-- <h3> Request a consult</h3>
-<h4>Please refer to our Calendly appointment calander to see avalible consult times.</h4>
-<a href= "#" class="calendly"> </a>
+<h3> Request a consult</h3>
+
+<h4>Please refer to our Calendly appointment calender to see available consult times.</h4>
+
+<a href= "#" class="calendly"></a>
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/virtualpets', text: 'Schedule A Consult', color: '#064B78', textColor: '#B8C5CE', branding: true }); }</script>
+<!-- Calendly badge widget end -->
+
 <p>You can make a request for a consult here.</p> 
+
 <form action="/action_page.php" method="get">
   <label for="fname">First name:</label>
   <input type="text" id="fname" name="fname"><br><br>
@@ -10,6 +19,6 @@
     <label for="vet">Appointment Time: </label>
   <input type="text" id="lname" name="lname"><br><br>
   <input type="submit" value="Submit">
-</form> --}}
+</form> 
 
 
