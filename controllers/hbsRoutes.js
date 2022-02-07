@@ -1,12 +1,17 @@
-var express = require('express');
-var router = express.Router();
+
+const router = require('express').Router();
+
 
 router.get('/', function (req, res) {
-  res.render('consult');
+  res.render('./layouts/main.handlebars');
 })
-// router.get('/signupUser', function (req, res) {
-//   res.render('signupUser');
-// })
+
+
+router.get('/login', function (req, res) {
+  res.render('./layouts/loginLayout.handlebars');
+})
+
+
 
 // router.get('/signupvet', function (req, res) {
 //   res.render('signupVet');
