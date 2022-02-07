@@ -38,7 +38,7 @@ router.post('/login', async (req, res) => {
               .json({ message: 'Incorrect username' });
             return;
           }
-          const validPassword = await dbUserData.checkPassword(req.body.password);
+          const validPassword = await dbUserData.password == req.body.password;
           if (!validPassword) {
             res
               .status(400)
@@ -58,3 +58,5 @@ router.post('/login', async (req, res) => {
         res.status(500).json(err);
     }
 })
+
+module.exports = router;

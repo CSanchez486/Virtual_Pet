@@ -1,16 +1,8 @@
-// const express = require('express');
-// const router = require('express').Router();
-// // const { append } = require('express/lib/response');
-// const homeRoutes = require('./homeRoutes');
-// const app = express();
-
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, 'public')));
-
-
-// // router uses homeRoutes as entry page
+const router = require('express').Router();
+const homeRoutes = require('./homeRoutes');
+const apiRoutes = require('./api')
+// router uses homeRoutes as entry page
+router.use('/api', apiRoutes);
 // router.use('/', homeRoutes);
 
-// module.exports = router;
-
+module.exports = router;

@@ -1,17 +1,15 @@
+var express = require('express');
+var router = express.Router();
+const {Forum} = require('../models')
 
-const router = require('express').Router();
-
-
-router.get('/', function (req, res) {
-  res.render('./layouts/main.handlebars');
+router.get('/', async (req, res) => {
+  const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
+  res.render('featured', {question: featurepost.post,
+response: featurepost.response})
 })
-
-
-router.get('/login', function (req, res) {
-  res.render('./layouts/loginLayout.handlebars');
-})
-
-
+// router.get('/signupUser', function (req, res) {
+//   res.render('signupUser');
+// })
 
 // router.get('/signupvet', function (req, res) {
 //   res.render('signupVet');

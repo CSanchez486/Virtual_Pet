@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{!-- HANDLEBARS CDN --}}
+    {{!-- MATERIALIZE --}}
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+{{!-- STYLE CSS --}}
+ <link rel="stylesheet" href="./css/style.css" type="text/css">
 
     <title>Virtual Pet</title>
 </head>
@@ -13,45 +17,28 @@
     <header>
             <h1>Virtual Pet</h1>
     </header>
-    
-    <nav>
+    <div class="container" >
         <ul>
-            <li>
-                Request a Consult
+            <li class= "consult-container col s6 m4 l3"><a class="waves-effect waves-light btn"><i class="material-icons right"></i>Request a Consult</a>
             </li>
-            <li>
-                Consult Appointment 
+               <li class= "consult-container col s6 m4 l3"><a class="waves-effect waves-light btn"><i class="material-icons right"></i>Consult Appointment</a>
             </li>
         </ul>
     </nav>
 
-     <nav>
-        <ul>
-            <li>
-               Sign up
+       <ul>
+            <li class= "consult-container col s6 m4 l3"><a class="waves-effect waves-light btn"><i class="material-icons right"></i>Sign up</a>
             </li>
-            <li>
-                <button>
-                    <a href='/login'>Login</a>
-                </button>
+               <li class= "consult-container col s6 m4 l3"><a class="waves-effect waves-light btn"><i class="material-icons right"></i>Login</a>
             </li>
         </ul>
-    </nav>
 
-    <div class="post-container">
-        <h3>
-            Does my pet have a food allergy?
-        </h3>
-        <p>
-"If a pet seems itchier than usual or is chewing on their feet, scratching their underarms or face, or feeling like it has hot spots, people often assume a food allergy is to blame. While diet can be a component of a pet's skin issues, an actual food allergy is unlikely.
-
-"Only about 10% of pets have real food allergies," Nelson said. "The other 90% of itchy, uncomfortable pets are typically some sort of inhaled allergen just like us, or a flea allergy." 
--Dr. Katy Nelson
-        </p>
-    </div>
-
-    
+</div>  
 {{{body}}}
-<h1>GOOD EVENING</h1>
 </body>
+     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+  </html>
+        
 </html>
