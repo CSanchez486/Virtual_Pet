@@ -19,6 +19,14 @@ router.get('/forum', async (req, res) => {
   res.render('forums',{forums})
 })
 
+router.get('/post', async (req, res) => {
+  const forumdata = await Forum.findAll();
+  const forums = forumdata.map((forum) =>
+      forum.get({ plain: true })
+    );
+  res.render('userquestion')
+})
+
 // router.get('/signupvet', function (req, res) {
 //   res.render('signupVet');
 // })
