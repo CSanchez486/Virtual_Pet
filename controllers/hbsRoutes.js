@@ -37,6 +37,10 @@ router.get('/forum/:id', async (req, res) => {
   res.render('response', {question: postdata.post})
 })
 
+router.get('/consult', async (req, res) => {
+  res.render('requestConsult')
+})
+
 // router.get('/signupvet', function (req, res) {
 //   res.render('signupVet');
 // })
