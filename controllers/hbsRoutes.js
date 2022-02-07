@@ -27,6 +27,11 @@ router.get('/post', async (req, res) => {
   res.render('userquestion')
 })
 
+router.get('/forum/:id', async (req, res) => {
+  const postdata = await Forum.findByPk(req.params.id)
+  res.render('response', {question: postdata.post})
+})
+
 // router.get('/signupvet', function (req, res) {
 //   res.render('signupVet');
 // })
