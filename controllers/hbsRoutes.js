@@ -1,10 +1,15 @@
-var express = require('express');
-var router = express.Router();
+const router = require('express').Router();
 const {Forum} = require('../models')
 
-router.get('/', async (req, res) => {
+router.get('/vet', async (req, res) => {
   const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
-  res.render('featured', {question: featurepost.post,
+  res.render('vetlogin', {question: featurepost.post,
+response: featurepost.response})
+})
+
+router.get('/user', async (req, res) => {
+  const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
+  res.render('userlogin', {question: featurepost.post,
 response: featurepost.response})
 })
 // router.get('/signupUser', function (req, res) {
@@ -30,6 +35,10 @@ response: featurepost.response})
 // router.get('/', function (req, res) {
 //   res.send('Main Homepage');
 // })
-
+router.get('/featured', async (req, res) => {
+  const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
+  res.render('featured', {question: featurepost.post,
+response: featurepost.response})
+})
 module.exports = router;
 
