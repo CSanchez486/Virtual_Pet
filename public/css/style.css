@@ -51,20 +51,6 @@ box {
   margin-left: 25%;
   font-size: 16px;
 }
-
-.askquestion {
+.askbutton {
   margin-top: 5%;
-  font-size: 16px;
-  padding: 10px;
-  background-color: #e7e8ec;
-  color: #3a2943;
-  border: 2px solid #064b78;
-  width: 30%;
-}
-
-.box {
-  margin-top: 5%;
-  font-size: 16px;
-  background-color: #e7e8ec;
-  color: #064b78;
 }
