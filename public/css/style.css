@@ -10,6 +10,8 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* CENTER */
 .header-container {
   text-align: center;
 }
@@ -17,10 +19,26 @@ body {
 .btn {
   margin: 5%;
 }
-
+/* CENTER */
 .container {
   width: 100%;
   height: 80%;
+  text-align: center;
+}
+
+/* CENTER */
+.forum-container {
+  width: 80%;
+  height: 80%;
+  margin-left: 26%;
+  margin-top: 5%;
+}
+
+footer {
+  color: #3a2943;
+  font-family: cursive;
+  bottom: 0%;
+  position: fixed;
 }
 
 .consult {
