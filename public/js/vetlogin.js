@@ -35,7 +35,7 @@ const signupHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if(response.ok) {
+        if (response.ok) {
             document.location.replace('/vet')
             alert("You're signed up!");
         } else {
