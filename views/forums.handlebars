@@ -15,18 +15,15 @@
         {{#each forums}}
         <div class="card">
             <div class="card-content">
-
-                <p>
                 <form class="forumholder ">
-                    <li class="{{this.id}}">
-                        {{this.post}}
+                    <ul class="{{this.id}}">
+                        <p><b>Question</b> : {{this.post}}</p>
                         <br>
-                        {{this.response}}
-                    </li>
+                        {{#if this.response}}
+                        <p><b>Response</b> : {{this.response}}</p>
+                        {{/if}}
+                    </ul>
                 </form>
-                </p>
-            </div>
-            <div class="card-action">
 
             </div>
         </div>
