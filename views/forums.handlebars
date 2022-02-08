@@ -1,0 +1,17 @@
+ <form class="forumholder">
+    {{#each forums}}
+    <li class="{{this.id}}">
+        {{this.post}}
+        <br>
+        {{this.response}}
+    </li>
+    {{/each}}
+</form>
+
+<button>
+    <a href="/post">
+    Ask Question
+    </a>
+</button>
+
+<script src="./js/reply.js"></script>

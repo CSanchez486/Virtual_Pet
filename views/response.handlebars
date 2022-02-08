@@ -1,0 +1,29 @@
+<div class="text-center">
+  <h2>{{question}}</h2>
+  <input class="form-input" type="text" id="response" name="response" />
+  <p>
+    <button class="btn btn-primary" id="respond">Respond</button>
+  </p>
+</div>
+
+<script>
+const respondHandler = async (event) => {
+    console.log("working")
+    const reply = document.querySelector('#response').value;
+    console.log(reply);
+    if (reply) {
+        const res = await fetch('/api/forum/:id', {
+            method: 'PUT',
+            body: JSON.stringify({ reply }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (res.ok) {
+            document.location.replace('/forum')
+        } else {
+            alert(response.statusText);
+        }
+    }
+}
+document.querySelector('#respond').addEventListener('click', respondHandler);
+</script>

@@ -1,3 +1,4 @@
+
 const router = require('express').Router();
 
 const userPortal = require('./userPortalRoutes');
@@ -10,4 +11,3 @@ router.use('/vet', vetRoutes);
 router.use('/forum', forumRoutes);
 
 module.exports = router;
-

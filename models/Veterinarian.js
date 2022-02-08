@@ -14,11 +14,11 @@ Veterinarian.init(
         },
         first_name: {
             type: DataTypes.STRING(30),
-            allowNull: false,
+            allowNull: true,
         },
         last_name: {
             type: DataTypes.STRING(30),
-            allowNull: false,
+            allowNull: true,
         },
         // email: {
         //     type: DataTypes.STRING(100),
