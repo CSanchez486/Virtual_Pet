@@ -2,6 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const { Forum } = require('../../models')
 
+//Create a new post
 router.post('/', async (req, res) => {
     try {
         const newPost = await Forum.create({
@@ -13,7 +14,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-
+//Update a post with a reply
 router.put('/:id', async (req, res) => {
     try {
         const newReply = await Forum.update(req.body, {
@@ -27,8 +28,6 @@ router.put('/:id', async (req, res) => {
             res.status(400).json({ message: 'Post your reply' });
             return;
         }
-        console.log('hello');
-        console.log(newReply);
         res.status(200).json(newReply);
     } catch (err) {
         res.status(400).json(err);
