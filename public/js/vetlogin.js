@@ -1,3 +1,4 @@
+//Function to handle logging in
 const loginHandler = async (event) => {
     event.preventDefault();
     const first_name = document.querySelector('#vetfirstname').value;
@@ -12,7 +13,7 @@ const loginHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/featured');
+            document.location.replace('/');
             alert("Logged in!")
         } else {
             console.log(response);
@@ -21,6 +22,7 @@ const loginHandler = async (event) => {
     }
 };
 
+//Function to handle signing up
 const signupHandler = async (event) => {
     event.preventDefault();
 
@@ -35,7 +37,7 @@ const signupHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if(response.ok) {
+        if (response.ok) {
             document.location.replace('/vet')
             alert("You're signed up!");
         } else {

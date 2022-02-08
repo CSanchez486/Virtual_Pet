@@ -1,3 +1,4 @@
+//Function to handle logging in
 const loginHandler = async (event) => {
     event.preventDefault();
 
@@ -12,7 +13,7 @@ const loginHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/featured');
+            document.location.replace('/');
             alert("Logged in!");
         } else {
             alert(response.statusText);
@@ -20,6 +21,7 @@ const loginHandler = async (event) => {
     }
 };
 
+//Function to handle signing up
 const signupHandler = async (event) => {
     event.preventDefault();
 
@@ -34,7 +36,7 @@ const signupHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if(response.ok) {
+        if (response.ok) {
             document.location.replace('/user')
             alert("You're signed up!")
         } else {
