@@ -11,7 +11,7 @@ const postHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/featured')
+            document.location.replace('/')
         } else {
             alert(response.statusText);
         }
