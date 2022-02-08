@@ -1,33 +1,35 @@
- <link rel="stylesheet" href="./css/style.css" text="type/css">
+<link rel="stylesheet" href="./css/style.css" text="type/css">
 <div class="row">
-<button class="askquestion col s12 m6 l4 offset-l4">
-    <a href="/post">
-    Ask Question
-    </a>
-</button>
+    <button class="askquestion col s12 m6 l4 offset-l4">
+        <a href="/post">
+            Ask Question
+        </a>
+    </button>
 </div>
 
 </div>
 <script src="./js/reply.js"></script>
 
-  <div class="row box">
+<div class="row box">
     <div class="col s12 m6 l4 offset-l4">
-      <div class="card">
-        <div class="card-content">
-        
-          <p><form class="forumholder ">
-    {{#each forums}}
-    <li class="{{this.id}}">
-        {{this.post}}
-        <br>
-        {{this.response}}
-    </li>
-    {{/each}}
-</form></p>
+        {{#each forums}}
+        <div class="card">
+            <div class="card-content">
+
+                <p>
+                <form class="forumholder ">
+                    <li class="{{this.id}}">
+                        {{this.post}}
+                        <br>
+                        {{this.response}}
+                    </li>
+                </form>
+                </p>
+            </div>
+            <div class="card-action">
+
+            </div>
         </div>
-        <div class="card-action">
-         
-        </div>
-      </div>
+        {{/each}}
     </div>
-  </div>
+</div>
