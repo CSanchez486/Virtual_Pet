@@ -14,32 +14,32 @@ User.init(
         },
         username: {
             type: DataTypes.STRING(30),
-            allowNull: false,
+            allowNull: true,
         },
         password: {
             type: DataTypes.STRING(100),
-            allowNull: false,
+            allowNull: true,
         },
-        first_name: {
-            type: DataTypes.STRING(30),
-            allowNull: false,
-        },
-        last_name: {
-            type: DataTypes.STRING(30),
-            allowNull: false,
-        },
+        // first_name: {
+        //     type: DataTypes.STRING(30),
+        //     allowNull: true,
+        // },
+        // last_name: {
+        //     type: DataTypes.STRING(30),
+        //     allowNull: true,
+        // },
         email: {
             type: DataTypes.STRING(100),
-            allowNull: false,
-            unique: true,
+            allowNull: true,
+            // unique: true,
             validate: {
                 isEmail: true,
             },
         },
-        phone_number: {
-            type: DataTypes.STRING(30),
-            allowNull: false,
-        },
+        // phone_number: {
+        //     type: DataTypes.STRING(30),
+        //     allowNull: true,
+        // },
     },
     {
         sequelize,

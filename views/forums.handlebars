@@ -1,12 +1,12 @@
- <div>
+ <form class="forumholder">
     {{#each forums}}
-    <li>
+    <li class="{{this.id}}">
         {{this.post}}
         <br>
         {{this.response}}
     </li>
     {{/each}}
-</div>
+</form>
 
 <button>
     <a href="/post">
@@ -14,6 +14,4 @@
     </a>
 </button>
 
-<script src="./js/reply.js">
-
-</script>
+<script src="./js/reply.js"></script>
