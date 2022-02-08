@@ -29,6 +29,13 @@ Required npm packages:
 
 ## Roadmap
 
+Future Developments:
+- Create Pet Profile
+- Stricter Verification for Veterinarians
+- Ability for User to Post Pictures
+- In App Video Conferencing
+
+
 
 
 ## Authors
