@@ -41,6 +41,10 @@ router.get('/consult', async (req, res) => {
   res.render('requestConsult')
 })
 
+router.get('/main', async (req, res) => {
+  res.render('homepage')
+})
+
 // router.get('/signupvet', function (req, res) {
 //   res.render('signupVet');
 // })
