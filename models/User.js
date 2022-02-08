@@ -20,26 +20,13 @@ User.init(
             type: DataTypes.STRING(100),
             allowNull: true,
         },
-        // first_name: {
-        //     type: DataTypes.STRING(30),
-        //     allowNull: true,
-        // },
-        // last_name: {
-        //     type: DataTypes.STRING(30),
-        //     allowNull: true,
-        // },
         email: {
             type: DataTypes.STRING(100),
             allowNull: true,
-            // unique: true,
             validate: {
                 isEmail: true,
             },
         },
-        // phone_number: {
-        //     type: DataTypes.STRING(30),
-        //     allowNull: true,
-        // },
     },
     {
         sequelize,

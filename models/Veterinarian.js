@@ -20,26 +20,6 @@ Veterinarian.init(
             type: DataTypes.STRING(30),
             allowNull: true,
         },
-        // email: {
-        //     type: DataTypes.STRING(100),
-        //     allowNull: false,
-        //     unique: true,
-        //     validate: {
-        //         isEmail: true,
-        //     },
-        // },
-        // username: {
-        //     type: DataTypes.STRING(30),
-        //     allowNull: false,
-        // },
-        // password: {
-        //     type: DataTypes.STRING(100),
-        //     allowNull: false,
-        // },
-        // phone_number: {
-        //     type: DataTypes.INTEGER(30),
-        //     allowNull: false,
-        // },
         dea : {
             type: DataTypes.STRING,
             allowNull: false,
