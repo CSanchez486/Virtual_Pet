@@ -12,7 +12,7 @@ const loginHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/featured');
+            document.location.replace('/');
             alert("Logged in!")
         } else {
             console.log(response);

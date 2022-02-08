@@ -13,14 +13,6 @@ Pet.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-// User.hasMany(Forum, {
-//     foreignKey: 'client_id',
-// });
-
-// Forum.belongsTo(User, {
-//     foreignKey: 'client_id',
-// });
-
 module.exports = {
     User, Pet, Veterinarian, Forum, Reply,
 };

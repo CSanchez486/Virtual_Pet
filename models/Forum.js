@@ -20,13 +20,6 @@ Forum.init(
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        // client_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id',
-        //     },
-        // },
     },
     {
         sequelize,

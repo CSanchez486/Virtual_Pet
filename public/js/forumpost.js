@@ -1,9 +1,7 @@
 const postHandler = async (event) => {
     event.preventDefault();
-    console.log('hello')
 
     const post = document.querySelector('#question').value;
-
 
     if (post) {
         const response = await fetch('/api/forum', {
