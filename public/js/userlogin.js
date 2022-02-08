@@ -1,8 +1,8 @@
 const loginHandler = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('').value.trim();
-    const password = document.querySelector('').value.trim();
+    const username = document.querySelector('#username-login').value;
+    const password = document.querySelector('#password-login').value;
 
     if (username && password) {
         const response = await fetch('/api/user/login', {
@@ -12,7 +12,8 @@ const loginHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/featured');
+            alert("Logged in!");
         } else {
             alert(response.statusText);
         }
@@ -22,27 +23,25 @@ const loginHandler = async (event) => {
 const signupHandler = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('').value.trim();
-    const password = document.querySelector('').value.trim();
-    const firstname = document.querySelector('').value.trim();
-    const lastname = document.querySelector('').value.trim();
-    const email = document.querySelector('').value.trim();
-    const phonenumber = document.querySelector('').value.trim();
+    const username = document.querySelector('#username').value.trim();
+    const password = document.querySelector('#password').value.trim();
+    const email = document.querySelector('#useremail').value.trim();
 
-    if (username && password && firstname && lastname && email && phonenumber) {
-        const response = await fetch('/api/user', {
+    if (username && password && email) {
+        const response = await fetch('/api/user/', {
             method: 'POST',
-            body: JSON.stringify({ username, password, firstname, lastname, email, phonenumber }),
+            body: JSON.stringify({ username, password, email }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if(response.ok) {
-            document.location.replace('/')
+            document.location.replace('/user')
+            alert("You're signed up!")
         } else {
             alert(response.statusText);
         }
     }
 };
 
-document.querySelector('').addEventListener('submit', loginHandler);
-document.querySelector('').addEventListener('submit', signupHandler);
+document.querySelector('.login-form').addEventListener('submit', loginHandler);
+document.querySelector('.signup-form').addEventListener('submit', signupHandler);

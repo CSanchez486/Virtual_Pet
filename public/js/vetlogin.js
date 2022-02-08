@@ -1,20 +1,21 @@
 const loginHandler = async (event) => {
     event.preventDefault();
+    const first_name = document.querySelector('#vetfirstname').value;
+    const last_name = document.querySelector('#vetlastname').value;
+    const dea = document.querySelector('#vetdea').value;
 
-    const username = document.querySelector('').value.trim();
-    const password = document.querySelector('').value.trim();
-    const dea = document.querySelector('').value.trim();
-
-    if (username && password && dea) {
+    if (first_name && last_name && dea) {
         const response = await fetch('/api/vet/login', {
             method: 'POST',
-            body: JSON.stringify({ username, password, dea }),
+            body: JSON.stringify({ first_name, last_name, dea }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/featured');
+            alert("Logged in!")
         } else {
+            console.log(response);
             alert(response.statusText);
         }
     }
@@ -23,27 +24,25 @@ const loginHandler = async (event) => {
 const signupHandler = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('').value.trim();
-    const password = document.querySelector('').value.trim();
-    const firstname = document.querySelector('').value.trim();
-    const lastname = document.querySelector('').value.trim();
-    const email = document.querySelector('').value.trim();
-    const dea = document.querySelector('').value.trim();
+    const firstname = document.querySelector('#vetfirstsign').value.trim();
+    const lastname = document.querySelector('#vetlastnsign').value.trim();
+    const dea = document.querySelector('#vetdeasign').value.trim();
 
-    if (username && password && firstname && lastname && email && dea) {
-        const response = await fetch('/api/vet', {
+    if (firstname && lastname && dea) {
+        const response = await fetch('/api/vet/', {
             method: 'POST',
-            body: JSON.stringify({ username, password, firstname, lastname, email, dea }),
+            body: JSON.stringify({ firstname, lastname, dea }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if(response.ok) {
-            document.location.replace('/')
+            document.location.replace('/vet')
+            alert("You're signed up!");
         } else {
             alert(response.statusText);
         }
     }
 };
 
-document.querySelector('').addEventListener('submit', loginHandler);
-document.querySelector('').addEventListener('submit', signupHandler);
+document.querySelector('.login-form').addEventListener('submit', loginHandler);
+document.querySelector('.signup-form').addEventListener('submit', signupHandler);

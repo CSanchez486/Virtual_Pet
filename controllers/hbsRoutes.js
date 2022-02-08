@@ -1,12 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const router = require('express').Router();
 const {Forum} = require('../models')
 
-// router.get('/', async (req, res) => {
-//   const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
-//   res.render('featured', {question: featurepost.post,
-// response: featurepost.response})
-// })
+router.get('/vet', async (req, res) => {
+  const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
+  res.render('vetlogin', {question: featurepost.post,
+response: featurepost.response})
+})
+
+router.get('/user', async (req, res) => {
+  const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
+  res.render('userlogin', {question: featurepost.post,
+response: featurepost.response})
+})
 // router.get('/signupUser', function (req, res) {
 //   res.render('signupUser');
 // })
@@ -32,6 +37,10 @@ router.get('/forum/:id', async (req, res) => {
   res.render('response', {question: postdata.post})
 })
 
+router.get('/consult', async (req, res) => {
+  res.render('requestConsult')
+})
+
 // router.get('/signupvet', function (req, res) {
 //   res.render('signupVet');
 // })
@@ -51,6 +60,10 @@ router.get('/forum/:id', async (req, res) => {
 // router.get('/', function (req, res) {
 //   res.send('Main Homepage');
 // })
-
+router.get('/featured', async (req, res) => {
+  const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
+  res.render('featured', {question: featurepost.post,
+response: featurepost.response})
+})
 module.exports = router;
 
