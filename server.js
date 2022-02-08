@@ -50,6 +50,3 @@ sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 })
 
-app.get("/:consult", (req, res) => {
-    res.render("consult", {consultID: req.param.room});
-});
