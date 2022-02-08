@@ -20,4 +20,3 @@ var options =
         "signupUser": "User Sign Up",
         "signupVet": "Veterinarian Sign Up"
 }
-
