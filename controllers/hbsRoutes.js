@@ -41,8 +41,10 @@ router.get('/consult', async (req, res) => {
   res.render('requestConsult')
 })
 
-router.get('/main', async (req, res) => {
-  res.render('homepage')
+router.get('/', async (req, res) => {
+  const featurepost = await Forum.findOne({where: {post: "My cat fell from a tree"}})
+  res.render('homepage', {question: featurepost.post,
+    response: featurepost.response})
 })
 
 // router.get('/signupvet', function (req, res) {
